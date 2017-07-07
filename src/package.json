@@ -1,6 +1,6 @@
 {
     "name": "nativescript-auto-fit-text",
-    "version": "0.9.0",
+    "version": "1.0.0",
     "description": "AutoFitText NativeScript plugin.",
     "main": "auto-fit-text",
     "typings": "index.d.ts",

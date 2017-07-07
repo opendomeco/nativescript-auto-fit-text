@@ -1,40 +1,54 @@
-# Your Plugin Name
+# AutoFitText
 
-Add your plugin badges here. See [nativescript-urlhandler](https://github.com/hypery2k/nativescript-urlhandler) for example.
+This plugin is based on the Nativescript Label implementation but with changes to adjust the font size according of it's with
 
-Then describe what's the purpose of your plugin. 
-
-In case you develop UI plugin, this is where you can add some screenshots.
+![Example Image](/assets/showoff.gif?raw=true)
 
 ## (Optional) Prerequisites / Requirements
 
-Describe the prerequisites that the user need to have installed before using your plugin. See [nativescript-firebase plugin](https://github.com/eddyverbruggen/nativescript-plugin-firebase) for example.
+This plugin is only tested with **{N} > 3.0.0**
 
 ## Installation
 
 Describe your plugin installation steps. Ideally it would be something like:
 
 ```javascript
-tns plugin add <your-plugin-name>
+tns plugin add nativescript-auto-fit-text
 ```
 
 ## Usage 
 
-Describe any usage specifics for your plugin. Give examples for Android, iOS, Angular if needed. See [nativescript-drop-down](https://www.npmjs.com/package/nativescript-drop-down) for example.
-	
-	```javascript
-    Usage code snippets here
-    ```)
+### Angular	
+```typescript
+import { AutoFitTextModule } from "nativescript-auto-fit-text/angular"
 
-## API
+@NgModule({
+	...
+    imports: [
+        AutoFitTextModule
+    ],
+    ...
+})
+export class AppModule { }
 
-Describe your plugin methods and properties here. See [nativescript-feedback](https://github.com/EddyVerbruggen/nativescript-feedback) for example.
-    
-| Property | Default | Description |
-| --- | --- | --- |
-| some property | property default value | property description, default values, etc.. |
-| another property | property default value | property description, default values, etc.. |
+```
+
+### Vanilla Nativescript
+
+```html
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" class="page" xmlns:ui="nativescript-auto-fit-text">
+  <StackLayout class="p-20">
+    <ui:AutoFitText text="Testinggggggggggggggggg" textWrap="false"></ui:AutoFitText>
+  </StackLayout>
+</Page>
+```
+
+## Credits
+
+[@grantland - android-autofittextview](https://github.com/grantland/android-autofittextview)
     
 ## License
 
 Apache License Version 2.0, January 2004
+
+

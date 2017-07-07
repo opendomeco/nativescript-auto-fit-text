@@ -3,5 +3,13 @@
 </ActionBar>
 
 <StackLayout class="page">
-    <AutoFitText text="asdasdasd" textWrap="false"></AutoFitText>
+    <AutoFitText  text="{{ string }}" ></AutoFitText>
+    <TextField 
+        class="input input-border" 
+        #textField  
+        hint="Focused TextField" 
+        text="aasdasdasdasdasdaaa" 
+         (textChange)="string = textField.text">
+    </TextField>
+
 </StackLayout>
