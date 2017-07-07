@@ -1,10 +1,10 @@
 # AutoFitText
 
-This plugin is based on the Nativescript Label implementation but with changes to adjust the font size according of it's with
+This plugin is based on the Nativescript Label implementation but with changes to adjust the font size according of it's width
 
 ![Example Image](/assets/showoff.gif?raw=true)
 
-## (Optional) Prerequisites / Requirements
+## Prerequisites / Requirements
 
 This plugin is only tested with **{N} > 3.0.0**
 
