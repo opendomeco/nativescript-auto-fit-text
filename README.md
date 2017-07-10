@@ -33,6 +33,10 @@ export class AppModule { }
 
 ```
 
+```html
+<AutoFitText text="Testinggggggggggggggggg" textWrap="false"></AutoFitText>
+```
+
 ### Vanilla Nativescript
 
 ```html
