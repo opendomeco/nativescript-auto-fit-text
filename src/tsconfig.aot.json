@@ -1,0 +1,39 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "es2015",
+        "moduleResolution": "node",
+        "removeComments": true,
+        "experimentalDecorators": true,
+        "noEmitHelpers": true,
+        "noEmitOnError": false,
+        "skipLibCheck": true,
+        "lib": [
+            "es6",
+            "dom"
+        ],
+        "types": [],
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+                "./node_modules/tns-core-modules/*",
+                "./node_modules/*"
+            ]
+        }
+    },
+    "files": [
+        "node_modules/tns-platform-declarations/android.d.ts",
+        "node_modules/tns-platform-declarations/ios.d.ts",
+        "auto-fit-text.android.ts",
+        "auto-fit-text.ios.ts",
+        "angular/app.module.ts",
+        "angular/index.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+    "compileOnSave": false,
+    "angularCompilerOptions": {
+        "strictMetadataEmit": true
+    }
+}

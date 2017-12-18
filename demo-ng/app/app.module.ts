@@ -17,4 +17,5 @@ import { AutoFitTextModule } from "nativescript-auto-fit-text/angular"
     providers: [],
     schemas: [ NO_ERRORS_SCHEMA ]
 })
-export class AppModule { }
+export class AppModule {
+ }

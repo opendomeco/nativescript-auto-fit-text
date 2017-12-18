@@ -1,27 +1,28 @@
 {
     "name": "nativescript-auto-fit-text",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "AutoFitText NativeScript plugin.",
     "main": "auto-fit-text",
     "typings": "index.d.ts",
     "nativescript": {
         "platforms": {
-            "android": "3.1.0",
-            "ios": "3.1.0"
+            "android": "3.2.0",
+            "ios": "3.2.0"
         }
     },
     "scripts": {
         "tsc": "tsc -skipLibCheck",
+        "build": "node --max-old-space-size=8192 ./node_modules/.bin/ngc -p tsconfig.aot.json",
         "postclone": "npm i && node scripts/postclone.js && cd ../demo && npm i && cd ../src && npm run plugin.link",
-        "test.android": "npm i && npm run tsc && npm run tslint && cd ../demo && tns build android && tns test android --justlaunch",
-        "test.ios": "npm i && npm run tsc && npm run tslint && cd ../demo && tns build ios && tns test ios --justlaunch",
+        "test.android": "npm i && npm run build && npm run tslint && cd ../demo && tns build android && tns test android --justlaunch",
+        "test.ios": "npm i && npm run build && npm run tslint && cd ../demo && tns build ios && tns test ios --justlaunch",
         "tslint": "cd .. && tslint \"**/*.ts\" --config tslint.json --exclude \"**/node_modules/**\"",
         "plugin.link": "npm link && cd ../demo && npm link nativescript-auto-fit-text && cd ../demo-ng && npm link nativescript-auto-fit-text && cd ../src",
-        "plugin.tscwatch": "npm run tsc -- -w",
-        "demo.ios": "npm i && npm run tsc && cd ../demo && tns run ios --syncAllFiles",
-        "demo.android": "npm i && npm run tsc && cd ../demo && tns run android --syncAllFiles",
-        "demo.ng.ios": "npm i && npm run tsc && cd ../demo-ng && tns run ios --syncAllFiles",
-        "demo.ng.android": "npm i && npm run tsc && cd ../demo-ng && tns run android --syncAllFiles"
+        "plugin.tscwatch": "npm run build -- -w",
+        "demo.ios": "npm i && npm run build && cd ../demo && tns run ios --syncAllFiles",
+        "demo.android": "npm i && npm run build && cd ../demo && tns run android --syncAllFiles",
+        "demo.ng.ios": "npm i && npm run build && cd ../demo-ng && npm run start-ios-bundle -- --syncAllFiles",
+        "demo.ng.android": "npm i && npm run build && cd ../demo-ng && tns run android --syncAllFiles"
     },
     "repository": {
         "type": "git",
@@ -49,22 +50,22 @@
         "tns-core-modules": "^3.1.0"
     },
     "devDependencies": {
-        "@angular/common": "~4.1.3",
-        "@angular/compiler": "~4.1.3",
-        "@angular/compiler-cli": "~4.1.3",
-        "@angular/core": "~4.1.3",
-        "@angular/forms": "~4.1.3",
-        "@angular/http": "~4.1.3",
-        "@angular/platform-browser": "~4.1.3",
-        "@angular/platform-browser-dynamic": "~4.1.3",
-        "@angular/router": "~4.1.3",
-        "nativescript-angular": "^3.1.0",
-        "tns-core-modules": "^3.1.0",
-        "tns-platform-declarations": "^3.1.0",
-        "typescript": "^2.2.2",
+        "@angular/common": "~4.2.6",
+        "@angular/compiler": "~4.2.6",
+        "@angular/compiler-cli": "~4.2.6",
+        "@angular/core": "~4.2.6",
+        "@angular/forms": "~4.2.6",
+        "@angular/http": "~4.2.6",
+        "@angular/platform-browser": "~4.2.6",
+        "@angular/platform-browser-dynamic": "~4.2.6",
+        "@angular/router": "~4.2.6",
+        "nativescript-angular": "^4.2.0",
+        "tns-core-modules": "^3.2.0",
+        "tns-platform-declarations": "^3.2.0",
+        "typescript": "^2.5.3",
         "prompt": "^1.0.0",
         "rimraf": "^2.5.0",
-        "rxjs": "^5.0.1",
+        "rxjs": "^5.4.3",
         "zone.js": "^0.8.4",
         "tslint": "^5.0.0"
     },
